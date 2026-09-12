@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  background: linear-gradient(135deg, #eef2f6 0%, #e2e8f0 100%);
+  color: #334155;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 16px;
+}
+
+.container {
+  background: #ffffff;
+  max-width: 580px;
+  width: 100%;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.08), 0 0 1px 1px rgba(15, 23, 42, 0.04);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #ffffff;
+  outline: 3px solid #3b82f6;
+  box-shadow: 0 10px 20px -5px rgba(59, 130, 246, 0.3);
+  margin-bottom: 16px;
+}
+
+.header h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+}
+
+.role {
+  color: #2563eb;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-top: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.section {
+  margin-top: 24px;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 20px;
+}
+
+.section h2 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1e293b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section h2::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 16px;
+  background-color: #2563eb;
+  border-radius: 2px;
+}
+
+.section p {
+  color: #475569;
+  line-height: 1.65;
+  font-size: 0.95rem;
+}
+
+.item h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.institution {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 2px;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  margin-top: 10px;
+}
+
+.skills li {
+  background-color: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #dbeafe;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.skills li:hover {
+  background-color: #dbeafe;
+  transform: translateY(-1px);
+}
+
+.contact p {
+  font-size: 0.92rem;
+  color: #475569;
+  margin-bottom: 6px;
+}
