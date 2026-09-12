@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manuel Ore Huasaja | Portafolio Profesional</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="wrapper">
+        <header class="card header-card">
+            <button class="theme-toggle" type="button" aria-label="Cambiar a modo oscuro" aria-pressed="false">
+                <span class="theme-icon" aria-hidden="true">☾</span>
+                <span class="theme-label">Modo oscuro</span>
+            </button>
+            <div class="profile-container">
+                <img src="gato.png" alt="Manuel Ore Huasaja" class="profile-img">
+            </div>
+            <div class="profile-info">
+                <p class="eyebrow">PORTAFOLIO PERSONAL <span></span></p>
+                <h1>Manuel Ore Huasaja</h1>
+                <p class="subtitle">Estudiante de Ingeniería de Sistemas</p>
+                <p class="location"><span aria-hidden="true">●</span> Ayacucho, Perú</p>
+            </div>
+        </header>
+
+        <main class="main-grid">
+            <section class="card">
+                <div class="section-heading">
+                    <span class="section-number">01</span>
+                    <h2>Educación actual</h2>
+                </div>
+                <div class="timeline-item">
+                    <h3>Universidad Nacional San Cristóbal de Huamanga (UNSCH)</h3>
+                    <p class="role">Facultad de Ingeniería - Escuela Profesional de Ingeniería de Sistemas</p>
+                    <p class="details">Formación académica enfocada en el desarrollo de software, análisis de sistemas, algoritmos y gestión de tecnologías de la información.</p>
+                </div>
+            </section>
+
+            <section class="card">
+                <div class="section-heading">
+                    <span class="section-number">02</span>
+                    <h2>Trayectoria escolar</h2>
+                </div>
+                <div class="timeline-item">
+                    <h3>Colegio Mariscal Cáceres</h3>
+                    <p class="role">Educación Secundaria</p>
+                    <p class="details">Etapa formativa inicial completada en una de las instituciones emblemáticas de la región Ayacucho.</p>
+                </div>
+            </section>
+
+            <section class="card full-width">
+                <div class="section-heading">
+                    <span class="section-number">03</span>
+                    <h2>Contacto y enlaces</h2>
+                </div>
+                <p class="contact-text">Interesado en el desarrollo tecnológico, la resolución de problemas lógicos y la innovación en sistemas. Conéctate a través de mis redes profesionales:</p>
+                <div class="contact-links">
+                    <a href="mailto:tucorreo@example.com" class="btn">Correo electrónico <span aria-hidden="true">↗</span></a>
+                    <a href="https://linkedin.com" target="_blank" rel="noreferrer" class="btn">LinkedIn <span aria-hidden="true">↗</span></a>
+                    <a href="https://github.com" target="_blank" rel="noreferrer" class="btn">GitHub <span aria-hidden="true">↗</span></a>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2026 Manuel Ore Huasaja. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+
+    <script>
+        const themeToggle = document.querySelector('.theme-toggle');
+        const savedTheme = localStorage.getItem('portfolio-theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        function setTheme(theme) {
+            const isDark = theme === 'dark';
+            document.documentElement.dataset.theme = theme;
+            themeToggle.setAttribute('aria-pressed', isDark);
+            themeToggle.setAttribute('aria-label', isDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
+            themeToggle.querySelector('.theme-icon').textContent = isDark ? '☀' : '☾';
+            themeToggle.querySelector('.theme-label').textContent = isDark ? 'Modo claro' : 'Modo oscuro';
+        }
+
+        setTheme(savedTheme || (prefersDark ? 'dark' : 'light'));
+        themeToggle.addEventListener('click', () => {
+            const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+            localStorage.setItem('portfolio-theme', nextTheme);
+            setTheme(nextTheme);
+        });
+    </script>
+</body>
+</html>
