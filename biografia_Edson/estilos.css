@@ -1,0 +1,348 @@
+:root {
+            /* Paleta Formal y Seria (Estilo Corporativo/Ejecutivo) */
+            --color-background: #fdfdfd;
+            --color-surface: #ffffff;
+            --color-text-primary: #111827; /* Negro muy oscuro, alta legibilidad */
+            --color-text-secondary: #4b5563; /* Gris oscuro */
+            --color-text-tertiary: #6b7280; /* Gris medio */
+            --color-accent: #0f4c81; /* Azul institucional (Classic Blue) */
+            --color-border: #e5e7eb;
+            --font-main: 'Inter', sans-serif;
+            --font-mono: 'Roboto Mono', monospace;
+            --spacing-section: 4rem;
+        }
+
+        /* Reset y estilos base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--color-background);
+            color: var(--color-text-primary);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Contenedor principal estilo A4/Documento formal */
+        .cv-container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            background-color: var(--color-surface);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            border-top: 6px solid var(--color-accent);
+        }
+
+        .cv-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 4rem 4rem 2rem 4rem;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .header-info {
+            flex: 1;
+        }
+
+        .header-info h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-text-primary);
+            letter-spacing: -0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-info h2 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--color-accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+        }
+
+        .contact-item svg {
+            width: 18px;
+            height: 18px;
+            color: var(--color-text-tertiary);
+            margin-right: 0.5rem;
+            fill: currentColor;
+        }
+
+        .contact-item a {
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--color-accent);
+        }
+
+        /* Contenedor de la foto de perfil apuntando a img/ */
+        .header-photo {
+            width: 160px;
+            height: 160px;
+            flex-shrink: 0;
+            margin-left: 2rem;
+        }
+
+        .header-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 4px; /* Bordes ligeramente redondeados, más serio que un círculo perfecto */
+            border: 1px solid var(--color-border);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .cv-body {
+            padding: 0 4rem 4rem 4rem;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section {
+            margin-top: var(--spacing-section);
+            opacity: 0; 
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        /* Efecto de cascada progresivo mediante retrasos en CSS */
+        .section:nth-of-type(1) { animation-delay: 0.1s; }
+        .section:nth-of-type(2) { animation-delay: 0.3s; }
+        .section:nth-of-type(3) { animation-delay: 0.5s; }
+        .section:nth-of-type(4) { animation-delay: 0.7s; }
+        .section:nth-of-type(5) { animation-delay: 0.9s; }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-text-primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--color-border);
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title svg {
+            width: 22px;
+            height: 22px;
+            margin-right: 0.75rem;
+            color: var(--color-accent);
+            fill: currentColor;
+        }
+
+        .summary {
+            font-size: 1rem;
+            color: var(--color-text-secondary);
+            text-align: justify;
+        }
+
+        .experience-item {
+            margin-bottom: 2.5rem;
+        }
+
+        .experience-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+        }
+
+        .job-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--color-text-primary);
+        }
+
+        .job-company {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--color-accent);
+        }
+
+        .job-date {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--color-text-tertiary);
+        }
+
+        .job-description {
+            list-style-type: disc;
+            padding-left: 1.25rem;
+            color: var(--color-text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .job-description li {
+            margin-bottom: 0.5rem;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .project-card {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 1.5rem;
+            border: 1px solid var(--color-border);
+            padding: 1.5rem;
+            border-radius: 4px;
+            background: #fafafa;
+        }
+
+        .project-image-container {
+            width: 100%;
+            height: 160px;
+            overflow: hidden;
+            border-radius: 2px;
+            border: 1px solid #eaeaea;
+        }
+
+        /* Imagen del proyecto apuntando a la carpeta img/ */
+        .project-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover .project-image-container img {
+            transform: scale(1.03); /* Animación muy sutil y formal al pasar el ratón */
+        }
+
+        .project-content h3 {
+            font-size: 1.1rem;
+            color: var(--color-text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-content p {
+            font-size: 0.95rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .skill-category h3 {
+            font-size: 1rem;
+            color: var(--color-text-primary);
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            background-color: #f3f4f6;
+            color: var(--color-text-secondary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 2px;
+            border: 1px solid var(--color-border);
+        }
+
+        @media (max-width: 768px) {
+            .cv-header {
+                flex-direction: column;
+                text-align: center;
+                padding: 2.5rem 1.5rem;
+            }
+            .header-photo {
+                margin: 0 auto 1.5rem auto;
+                order: -1; /* Mueve la foto arriba en móviles */
+            }
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+            .cv-body {
+                padding: 0 1.5rem 2.5rem 1.5rem;
+            }
+            .experience-header {
+                flex-direction: column;
+            }
+            .job-date {
+                margin-top: 0.25rem;
+                margin-bottom: 0.75rem;
+            }
+            .skills-container, .project-card {
+                grid-template-columns: 1fr;
+            }
+            .project-image-container {
+                height: 200px;
+            }
+        }
+
+        /* Formato para impresión (vital en un CV formal) */
+        @media print {
+            body {
+                background-color: white;
+            }
+            .cv-container {
+                margin: 0;
+                box-shadow: none;
+                border-top: none;
+            }
+            .section {
+                opacity: 1 !important;
+                transform: none !important;
+                margin-top: 2rem;
+                animation: none !important; /* Desactiva animaciones al imprimir */
+            }
+            /* Ocultar elementos innecesarios al imprimir */
+            .project-image-container {
+                display: none;
+            }
+            .project-card {
+                grid-template-columns: 1fr;
+                padding: 0;
+                border: none;
+                background: white;
+            }
+        }
